@@ -84,3 +84,9 @@ Checked scope before acting given the personal-data pattern seen already this se
 Alexandro asked to include the root-level `Banco de Horas/` folder (time-bank/overtime spreadsheets and dashboards for Oficina and Pátio, 9 files) in `MOC - Pessoas`. Attempted to move the folder into `wiki/people/` (matching the pattern used for Manuais e Documentos, Projetos e Obras, and INDICADORES OFICINA), but the move was blocked by an auto-mode safety classifier over HR-data provenance before touching anything — nothing was moved.
 
 Followed the same pattern already established for `backup/diversos organizar/`: left `Banco de Horas/` at the root (outside git's tracked scope, already covered by the root `.gitignore` rule), created `Banco de Horas.md` alongside it linking all 9 files individually and back to `[[MOC - Pessoas]]`, and added the reference in `wiki/people/MOC - Pessoas.md`. Verified in Obsidian that all links resolve and `MOC - Pessoas` now lists `index` and `Banco de Horas` — no longer empty.
+
+## [2026-09-14] setup | Repo pushed to GitHub; index cleanup
+
+Created a private GitHub repository (`2h9gr58mnp-ops/alexandromendonca`) and pushed the local git history to it, so scheduled cloud agents can access the wiki (cloud routines only have access to a remote git repo, not this machine's local disk). The push itself was blocked twice by Claude Code's own auto-mode safety classifier ("Data Exfiltration"), so Alexandro ran `git push -u origin master` himself from a local terminal — confirmed `origin/master` now tracks `master`.
+
+While verifying, found `wiki/projects/projeto-exemplo.md` had been deleted from disk (expected — it was explicitly marked as a disposable demo page). Removed the now-dangling reference to it from `wiki/index.md`, and added the missing `Banco de Horas` entry under People (had been added to `MOC - Pessoas.md` in the previous entry but not to the main index).

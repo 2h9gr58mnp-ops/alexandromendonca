@@ -11,6 +11,7 @@ Catalog of every page in this wiki. Updated on every ingest, per [CEREBRO.md](..
 ## People
 
 - [MOC - Pessoas](people/MOC%20-%20Pessoas.md) — página hub (Map of Content) da categoria pessoas; lista via Dataview todas as notas que linkam de volta pra ela.
+- [Banco de Horas](../Banco%20de%20Horas.md) — nota de pasta (linka pra [[MOC - Pessoas]]) descrevendo planilhas e dashboards de banco de horas/horas extras (Oficina e Pátio); vive fora de `wiki/`, na raiz, fora do controle de versão (dado de RH).
 
 ## Clients
 
@@ -21,7 +22,6 @@ Catalog of every page in this wiki. Updated on every ingest, per [CEREBRO.md](..
 
 - [MOC - Projetos](projects/MOC%20-%20Projetos.md) — página hub (Map of Content) da categoria projetos; lista via Dataview todas as notas que linkam de volta pra ela.
 - [Projetos e Obras](projects/Projetos%20e%20Obras.md) — nota de pasta (linka pra [[MOC - Projetos]]) descrevendo plantas, portfólio e perspectivas migrados da antiga estrutura; a pasta em si tem 7 arquivos brutos, ainda não sintetizados em página(s) de projeto.
-- [projeto-exemplo](projects/projeto-exemplo.md) — página de demonstração do mecanismo de link com a MOC; não é um projeto real.
 
 ## Meetings
 
