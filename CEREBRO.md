@@ -141,6 +141,24 @@ Alexandro uses Obsidian with the Templater and Dataview plugins. In addition to 
 
 This root directory also contains a large amount of pre-existing, unrelated personal/business material (e.g. `backup/`, `RH e Financeiro/`, `Banco de Horas/`, etc.) that predates this wiki setup and is **not** part of it. The git repository at this root is deliberately scoped via `.gitignore` to track only `raw/`, `wiki/`, `outputs/`, `TEMPLATES/` (Obsidian Templater templates, e.g. the MOC template), `CEREBRO.md`, `CLAUDE.md`, and `.gitignore` itself. Do not add other root-level folders to git without Alexandro's explicit go-ahead — some of them (e.g. anything under `backup/CREDENCIAIS`) may contain credentials or sensitive personal data and must never be committed. This also applies *inside* tracked folders: `wiki/backup/` is explicitly excluded too (see its own `.gitignore` entry) because it's an unsorted ~18GB dump of installers/videos, not wiki content — check size and content before staging anything unfamiliar that shows up inside `wiki/` or `outputs/`, since files get moved into those trees manually from time to time.
 
+## Git push discipline
+
+This repo is also mirrored to a private GitHub remote (`origin`) so scheduled cloud agents (see below) can read it — cloud routines only have access to a remote git repo, never this machine's local disk. Keeping the remote in sync with local commits matters for those routines to be useful.
+
+- **`git push` from this session is blocked by Claude Code's own auto-mode safety classifier** (flagged as a "Data Exfiltration" risk, likely due to the sensitive material this project has touched). Retrying doesn't help — it's a hard block, not a transient one. Don't keep retrying or try to route the same push through a different tool to get around it.
+- **At the start of every session**, check `git status` and compare local `HEAD` against `origin/master` (e.g. `git log origin/master..HEAD --oneline`). If local is ahead, tell Alexandro there are unpushed commits before doing anything else.
+- **At the end of every session**, do the same check again and remind him if there's anything to push.
+- Since you can't push yourself, walk him through it: open the project folder in File Explorer, right-click → "Abrir no Terminal", run `git push -u origin master` (or just `git push` if upstream is already set), and complete the GitHub login prompt that opens in the browser.
+
+## Scheduled cloud agents
+
+Two GitHub Actions-independent cloud routines run against the `origin` remote (`2h9gr58mnp-ops/alexandromendonca`), read-only (`Read`, `Glob`, `Grep`, `Bash` only — no write/edit/commit access):
+
+- **Varredura de raw pendente** — daily, 8am America/Sao_Paulo. Reports any file in `raw/*` not yet referenced in `wiki/log.md` or in any page's `sources` frontmatter.
+- **Lint semanal do wiki** — weekly, Monday 8am America/Sao_Paulo. Runs the Lint workflow (health check) below and reports findings — never applies bulk changes itself.
+
+Both only see whatever was last pushed to `origin/master` — see "Git push discipline" above.
+
 ## Open conventions (revisit as needed)
 
 - Client/project subcategorization beyond top-level folders will emerge organically as sources come in — no fixed taxonomy imposed upfront.

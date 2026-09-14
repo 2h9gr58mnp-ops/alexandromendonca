@@ -90,3 +90,14 @@ Followed the same pattern already established for `backup/diversos organizar/`: 
 Created a private GitHub repository (`2h9gr58mnp-ops/alexandromendonca`) and pushed the local git history to it, so scheduled cloud agents can access the wiki (cloud routines only have access to a remote git repo, not this machine's local disk). The push itself was blocked twice by Claude Code's own auto-mode safety classifier ("Data Exfiltration"), so Alexandro ran `git push -u origin master` himself from a local terminal — confirmed `origin/master` now tracks `master`.
 
 While verifying, found `wiki/projects/projeto-exemplo.md` had been deleted from disk (expected — it was explicitly marked as a disposable demo page). Removed the now-dangling reference to it from `wiki/index.md`, and added the missing `Banco de Horas` entry under People (had been added to `MOC - Pessoas.md` in the previous entry but not to the main index).
+
+## [2026-09-14] setup | Created two scheduled cloud agents, documented git push discipline
+
+Connected Alexandro's GitHub account to Claude (required before a cloud routine can use a GitHub repo), then created two scheduled routines via RemoteTrigger, both read-only (`Read`, `Glob`, `Grep`, `Bash` — no write/edit/commit) against `origin` (`2h9gr58mnp-ops/alexandromendonca`):
+
+- **Varredura de raw pendente** (`trig_013zYLS9QNJRop6uQipK91Xn`) — daily, 8am America/Sao_Paulo (11:00 UTC). Reports files in `raw/*` not yet referenced in `wiki/log.md` or any page's `sources` frontmatter.
+- **Lint semanal do wiki** (`trig_012QZ55yMsLYo7xyN9NNxqHE`) — weekly, Monday 8am America/Sao_Paulo (11:00 UTC). Runs the CEREBRO.md Lint workflow and reports findings only.
+
+Both prompts explicitly instruct reading `CEREBRO.md` first and never applying changes — report-only, matching the "propose before bulk changes" rule in the Lint workflow.
+
+Since these only see what's on `origin/master`, and `git push` from this session is hard-blocked by Claude Code's own safety classifier (not a transient failure — confirmed by retrying), documented a "Git push discipline" section in `CEREBRO.md`: check local-vs-origin at the start and end of every session and remind Alexandro to push (with terminal steps) whenever local is ahead. Also added a "Scheduled cloud agents" section documenting both routines for future reference.
