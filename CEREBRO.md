@@ -104,6 +104,30 @@ When asked for a health check, look for:
 
 **Propose findings before making bulk changes.** Don't silently rewrite multiple pages during a lint pass — list what you found, suggest fixes, and let Alexandro confirm before applying anything broad. Also suggest follow-up questions or sources worth chasing.
 
+## MOC pages (Map of Content)
+
+Alexandro uses Obsidian with the Templater and Dataview plugins. In addition to `wiki/index.md` (the flat, complete catalog), each category folder gets a **MOC page** as its in-graph hub/landing page:
+
+- **Naming**: `MOC - <Category or Entity Name>.md` (e.g. `wiki/clients/MOC - Clientes.md`). One per top-level category folder (`people/`, `clients/`, `projects/`, `meetings/`, `concepts/`) at minimum; a large individual entity (a client or project with many pages) can get its own MOC too once it justifies one.
+- **Template**:
+
+  `````markdown
+  # MOC - <Name>
+
+  ## Notas desta pasta
+  ```dataview
+  list from [[<Name>]]
+  ```
+
+  ## MOCs relacionadas
+
+
+  ## Anotações gerais
+  `````
+- **How it populates**: the Dataview `list from [[<Name>]]` query lists pages that **link to** this MOC — it does not scan the folder automatically. So every wiki page belonging to that category must link to its MOC (e.g. a line like `Ver também: [[MOC - Clientes]]`, or a `moc:` frontmatter field) for it to show up in the list. When creating or updating a page under a category that has a MOC, add that link.
+- **Templater placeholder**: the `<% tp.file.title %>` in the template only resolves inside Obsidian via Templater. When *you* (the agent) create a MOC file directly by writing to disk, substitute the real title in both the heading and the `from [[...]]` query — don't leave the raw Templater syntax in a file written outside Obsidian.
+- **Relationship to `index.md`**: `index.md` stays the authoritative, complete catalog (every page, one-liner, category, metadata) — keep updating it exactly as before. MOC pages are a complementary Obsidian-native navigation layer, not a replacement.
+
 ## Editing discipline
 
 - Alexandro rarely edits the wiki directly — you own it.

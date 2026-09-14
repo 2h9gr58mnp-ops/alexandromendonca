@@ -22,3 +22,23 @@ Also found `wiki/backup/` is ~18GB (software installers, videos, unsorted files)
 Linked the remaining filed folders into `wiki/index.md` as unprocessed document catalogs (not yet synthesized into proper entity/project/concept pages): `wiki/clients/Manuais e Documentos/`, `wiki/projects/Projetos e Obras/` (moved here from directly under `wiki/` for consistency), `wiki/concepts/INDICADORES OFICINA/`.
 
 Also noted, not yet acted on: a loose `raw/PROPOSTA LOCAÇÃO ESCAV. ANFIB.pdf` (not filed into a dated subfolder yet) and a small Obsidian `.base` view file at `raw/emails/base nova.base`.
+
+## [2026-09-14] setup | CLAUDE.md pointer + MOC convention adopted
+
+Added a minimal `CLAUDE.md` at root that just points to `CEREBRO.md`, so Claude Code auto-loads the schema again while `CEREBRO.md` stays the real file. Fixed a stray Obsidian embed that had landed inside `CEREBRO.md`'s frontmatter example, and updated its self-references.
+
+Adopted Alexandro's Templater/Dataview MOC (Map of Content) pattern as an official convention — documented under a new "MOC pages" section in `CEREBRO.md`: one `MOC - <Name>.md` page per category folder (and per large entity as needed), populated via Dataview backlinks, complementary to `wiki/index.md`. No MOC pages created yet for existing folders — convention documented for future ingests; existing folders can get theirs on request.
+
+## [2026-09-14] setup | Untangled live folder-drag collisions in wiki/
+
+While preparing a commit, found the wiki tree had been reorganized concurrently (Obsidian folder drags, likely a folder-note plugin) into a nested, non-conventional shape: `wiki/people/concepts/`, `wiki/people/meetings/` (with an 18GB `backup/` re-nested inside it), `wiki/projects/clients/`, plus stray `concepts/` and `projects/` folder-note artifacts at the repo root and `wiki/.obsidian/` (a second vault root). `CLAUDE.md` had also been deleted. Confirmed via `git status`/`git diff --cached` that nothing had actually been committed or corrupted — only the working tree was affected.
+
+Alexandro confirmed to fix the layout to match CEREBRO.md's convention. Actions taken:
+- `wiki/people/concepts/INDICADORES OFICINA` → `wiki/concepts/INDICADORES OFICINA`
+- `wiki/projects/clients/Manuais e Documentos` → `wiki/clients/Manuais e Documentos`
+- `wiki/people/meetings/backup/` (18GB, re-drifted from its excluded location) → merged back into the gitignored root `backup/` via `robocopy /MOVE` (PowerShell's `Move-Item` can't handle some of the very long installer paths inside it). Verified `backup/CREDENCIAIS` and `backup/Senhas do Microsoft Edge.csv` were untouched and not duplicated elsewhere.
+- Removed the now-empty leftover shells (`wiki/people/concepts/`, `wiki/people/meetings/`, `wiki/projects/clients/`, each holding only a stray `.gitkeep`) and restored a proper empty `wiki/meetings/` at the top level.
+- Recreated the root `CLAUDE.md` pointer file (deleted during the drag episode).
+- `wiki/index.md` links already pointed at the correct final paths (no change needed there beyond dropping the now-inapplicable "excluded from git" note about `wiki/backup/`, since backup is back at root, covered by the normal root `.gitignore` rule like before).
+
+Not touched, flagged only: `wiki/people/TESTE DIAS/` (empty folder, likely a test), and the stray root-level `concepts/INDICADORES OFICINA.md` / `projects/Projetos e Obras.md` / `projects/Projetos e Obras 1.md` folder-note files (outside git's tracked scope, harmless, but probably leftover from the same drag episode — Alexandro may want to clean these up in Obsidian directly).

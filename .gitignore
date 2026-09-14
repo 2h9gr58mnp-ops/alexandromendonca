@@ -24,6 +24,10 @@ $RECYCLE.BIN/
 ~$*
 .vscode/
 
+# Obsidian vault config (local app/editor state, not wiki content) —
+# applies anywhere, including a vault rooted inside wiki/
+.obsidian/
+
 # wiki/backup/ is an 18GB+ dump of old software installers, videos, and
 # unsorted personal/business files (not wiki content) filed in from the
 # pre-existing root backup/ folder. Kept on disk for browsing in Obsidian,
