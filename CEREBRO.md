@@ -1,4 +1,4 @@
-# LLM Wiki — CLAUDE.md
+# LLM Wiki — CEREBRO.md
 
 ## Role and mission
 
@@ -8,7 +8,7 @@ You are the maintainer of this business knowledge base. The **wiki is the produc
 
 1. **`raw/`** — immutable source documents. This is the source of truth. Never modify, rename, move, or delete anything in `raw/` once it's added. If a source is superseded (e.g. a revised report), add the new version as a new file and note the supersession in the wiki — don't overwrite the old one.
 2. **`wiki/`** — your domain. Structured, interlinked markdown. Alexandro rarely edits this by hand; you own its accuracy and organization. Every page should be traceable back to the raw source(s) it was built from.
-3. **This file (`CLAUDE.md`)** — the schema, co-evolved with Alexandro over time. When a new convention gets established during work (a new category, a naming tweak, a new output type), propose adding it here so it persists across sessions.
+3. **This file (`CEREBRO.md`)** — the schema, co-evolved with Alexandro over time. When a new convention gets established during work (a new category, a naming tweak, a new output type), propose adding it here so it persists across sessions. A minimal `CLAUDE.md` at the root just points here — Claude Code auto-loads `CLAUDE.md` at session start, so that's how this schema gets pulled in automatically.
 
 ## Directory structure
 
@@ -55,8 +55,6 @@ type: person        # person | client | project | meeting | concept
 tags: [acme-corp, engineering]
 date: 2026-09-14    # date of creation or of the event/meeting the page covers
 sources:
-![[Sem título.base]]
-
   - raw/meetings/2026-09-14_kickoff-call.md
 updated: 2026-09-14  # last date this page was touched
 ---
@@ -115,7 +113,7 @@ When asked for a health check, look for:
 
 ## Git scope
 
-This root directory also contains a large amount of pre-existing, unrelated personal/business material (e.g. `backup/`, `RH e Financeiro/`, `Banco de Horas/`, etc.) that predates this wiki setup and is **not** part of it. The git repository at this root is deliberately scoped via `.gitignore` to track only `raw/`, `wiki/`, `outputs/`, `CLAUDE.md`, and `.gitignore` itself. Do not add other root-level folders to git without Alexandro's explicit go-ahead — some of them (e.g. anything under `backup/CREDENCIAIS`) may contain credentials or sensitive personal data and must never be committed.
+This root directory also contains a large amount of pre-existing, unrelated personal/business material (e.g. `backup/`, `RH e Financeiro/`, `Banco de Horas/`, etc.) that predates this wiki setup and is **not** part of it. The git repository at this root is deliberately scoped via `.gitignore` to track only `raw/`, `wiki/`, `outputs/`, `CEREBRO.md`, `CLAUDE.md`, and `.gitignore` itself. Do not add other root-level folders to git without Alexandro's explicit go-ahead — some of them (e.g. anything under `backup/CREDENCIAIS`) may contain credentials or sensitive personal data and must never be committed. This also applies *inside* tracked folders: `wiki/backup/` is explicitly excluded too (see its own `.gitignore` entry) because it's an unsorted ~18GB dump of installers/videos, not wiki content — check size and content before staging anything unfamiliar that shows up inside `wiki/` or `outputs/`, since files get moved into those trees manually from time to time.
 
 ## Open conventions (revisit as needed)
 

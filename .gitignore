@@ -9,6 +9,7 @@
 !/wiki/
 !/outputs/
 !/CEREBRO.md
+!/CLAUDE.md
 !/.gitignore
 
 # OS cruft (still ignored even inside tracked folders)
