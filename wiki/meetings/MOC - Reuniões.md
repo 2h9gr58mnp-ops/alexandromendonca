@@ -1,11 +1,11 @@
-# MOC - Clientes
+# MOC - Reuniões
 
 ## Notas desta pasta
 ```dataview
-list from [[MOC - Clientes]]
+list from [[MOC - Reuniões]]
 ```
 
 ## MOCs relacionadas
-[\diversos organizar]
+
 
 ## Anotações gerais

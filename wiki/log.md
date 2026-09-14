@@ -48,3 +48,7 @@ Not touched, flagged only: `wiki/people/TESTE DIAS/` (empty folder, likely a tes
 Installed and enabled the Dataview and Templater community plugins on the root Obsidian vault (previously running with community plugins fully off). Set Templater's template folder to `TEMPLATES/` (already holding `TEMPLATES/MOC.md`, saved earlier from Alexandro's pasted template). Verified end-to-end by running "Templater: Create new note from template" → MOC, which correctly substituted `<% tp.file.title %>` and rendered the `dataview` query block (no errors, just an empty result since nothing links to it yet).
 
 Renamed the test note to `MOC - Clientes` and moved it to `wiki/clients/MOC - Clientes.md` as the category's first real MOC hub page, and linked it from `wiki/index.md`. Confirmed working via computer-use control of the Obsidian desktop app (screen-share granted for this task).
+
+## [2026-09-14] setup | MOC hub pages created for all remaining categories
+
+Created the remaining four category MOC pages the same way (Templater template, renamed, dataview query fixed to point at the note's own title, moved into place): `wiki/people/MOC - Pessoas.md`, `wiki/projects/MOC - Projetos.md`, `wiki/meetings/MOC - Reuniões.md`, `wiki/concepts/MOC - Conceitos.md`. All five category folders now have a hub page. Linked all four from `wiki/index.md`. None of them show any results yet since no other notes link back to them — that's expected until real content gets ingested and cross-linked.

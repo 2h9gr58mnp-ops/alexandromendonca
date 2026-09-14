@@ -10,7 +10,7 @@ Catalog of every page in this wiki. Updated on every ingest, per [CEREBRO.md](..
 
 ## People
 
-_No pages yet._
+- [MOC - Pessoas](people/MOC%20-%20Pessoas.md) — página hub (Map of Content) da categoria pessoas; lista via Dataview todas as notas que linkam de volta pra ela.
 
 ## Clients
 
@@ -19,14 +19,16 @@ _No pages yet._
 
 ## Projects
 
+- [MOC - Projetos](projects/MOC%20-%20Projetos.md) — página hub (Map of Content) da categoria projetos; lista via Dataview todas as notas que linkam de volta pra ela.
 - [Projetos e Obras](projects/Projetos%20e%20Obras/) — plantas, portfólio e perspectivas de projetos/obras migrados da antiga estrutura; pasta de documentos brutos, ainda não sintetizada em página(s) de projeto. 7 arquivos.
 
 ## Meetings
 
-_No pages yet._
+- [MOC - Reuniões](meetings/MOC%20-%20Reuni%C3%B5es.md) — página hub (Map of Content) da categoria reuniões; lista via Dataview todas as notas que linkam de volta pra ela.
 
 ## Concepts
 
+- [MOC - Conceitos](concepts/MOC%20-%20Conceitos.md) — página hub (Map of Content) da categoria conceitos; lista via Dataview todas as notas que linkam de volta pra ela.
 - [INDICADORES OFICINA](concepts/INDICADORES%20OFICINA/) — relatórios mensais de indicadores de manutenção (jan–abr 2026) e apresentação de reunião de pátio. 5 arquivos.
 
 ---
