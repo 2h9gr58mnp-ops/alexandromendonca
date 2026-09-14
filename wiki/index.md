@@ -14,6 +14,7 @@ _No pages yet._
 
 ## Clients
 
+- [MOC - Clientes](clients/MOC%20-%20Clientes.md) — página hub (Map of Content) da categoria clientes; lista via Dataview todas as notas que linkam de volta pra ela.
 - [Manuais e Documentos](clients/Manuais%20e%20Documentos/) — manuais corporativos, NDA e minuta migrados da antiga estrutura de pastas; pasta de documentos brutos, ainda não sintetizada em página(s) de cliente. 6 arquivos.
 
 ## Projects

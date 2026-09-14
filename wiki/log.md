@@ -42,3 +42,9 @@ Alexandro confirmed to fix the layout to match CEREBRO.md's convention. Actions 
 - `wiki/index.md` links already pointed at the correct final paths (no change needed there beyond dropping the now-inapplicable "excluded from git" note about `wiki/backup/`, since backup is back at root, covered by the normal root `.gitignore` rule like before).
 
 Not touched, flagged only: `wiki/people/TESTE DIAS/` (empty folder, likely a test), and the stray root-level `concepts/INDICADORES OFICINA.md` / `projects/Projetos e Obras.md` / `projects/Projetos e Obras 1.md` folder-note files (outside git's tracked scope, harmless, but probably leftover from the same drag episode — Alexandro may want to clean these up in Obsidian directly).
+
+## [2026-09-14] setup | Dataview + Templater installed and verified live
+
+Installed and enabled the Dataview and Templater community plugins on the root Obsidian vault (previously running with community plugins fully off). Set Templater's template folder to `TEMPLATES/` (already holding `TEMPLATES/MOC.md`, saved earlier from Alexandro's pasted template). Verified end-to-end by running "Templater: Create new note from template" → MOC, which correctly substituted `<% tp.file.title %>` and rendered the `dataview` query block (no errors, just an empty result since nothing links to it yet).
+
+Renamed the test note to `MOC - Clientes` and moved it to `wiki/clients/MOC - Clientes.md` as the category's first real MOC hub page, and linked it from `wiki/index.md`. Confirmed working via computer-use control of the Obsidian desktop app (screen-share granted for this task).

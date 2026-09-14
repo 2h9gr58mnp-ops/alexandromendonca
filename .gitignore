@@ -8,6 +8,7 @@
 !/raw/
 !/wiki/
 !/outputs/
+!/TEMPLATES/
 !/CEREBRO.md
 !/CLAUDE.md
 !/.gitignore
