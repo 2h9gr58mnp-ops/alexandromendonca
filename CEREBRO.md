@@ -43,6 +43,8 @@ outputs/
 - Filename convention: **kebab-case slugs**, e.g. `wiki/people/jane-doe.md`, `wiki/clients/acme-corp.md`, `wiki/projects/project-phoenix.md`.
 - One page per distinct entity/concept/project/client/meeting. Don't merge unrelated entities onto one page for convenience.
 - Every page links back to the raw source(s) it draws from (relative path into `raw/`), and cross-links to other wiki pages it relates to using standard markdown links.
+- **Link individual source files with `[[wikilinks]]`, not plain text.** When a page (or folder note, see below) references specific documents — a PDF, a DOCX, an image — use an actual `[[Nome do Arquivo.ext]]` link for each one, not a bullet point that just names the file in prose. Obsidian's graph view only draws a connecting line for real links; a filename mentioned as text leaves that file an unconnected orphan in the graph, with no visible trail back to where it's filed. This matters to Alexandro specifically — he wants every filed document to be traceable in the graph.
+- **Folder notes for raw document dumps.** When a folder holds only binary files (PDF/DOCX/PPTX/JPEG, etc. — files that can't contain `[[links]]` themselves), give it a companion note with the same name, placed alongside the folder (e.g. `wiki/clients/Manuais e Documentos.md` next to `wiki/clients/Manuais e Documentos/`) — matching the folder-note pattern already used elsewhere in this vault. That note should `[[link]]` every file in the folder individually (not just describe them) and link back to the category's MOC, so the graph shows a full chain from MOC → folder note → each file.
 
 ## Frontmatter convention
 

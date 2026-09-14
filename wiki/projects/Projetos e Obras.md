@@ -10,12 +10,14 @@ updated: 2026-09-14
 
 # Projetos e Obras
 
-Pasta de documentos brutos migrada da antiga estrutura de pastas, ainda não sintetizada em página(s) de projeto individuais. Contém:
+Pasta de documentos brutos migrada da antiga estrutura de pastas, ainda não sintetizada em página(s) de projeto individuais. Arquivos:
 
-- Portfólio Ludopar (reduzido)
-- Perspectivas noturnas e outras imagens de projeto
-- Projeto interno Terrap (folha 01-01)
-- Página de projeto avulsa
-- Índice da pasta original
+- [[PORTFOLIO_LUDOPAR reduzido.pdf]]
+- [[PERSPECTIVA NOTURNA 2.jpeg]]
+- [[PERSPECTIVA NOTURNA1.jpeg]]
+- [[pl.jpeg]]
+- [[PROJETO PAGINA 1.pdf]]
+- [[PROJ_INTERNO_TERRAP-06-FOLHA_01-01.pdf]]
+- [[Projetos e Obras - Índice.docx]]
 
 Ver também: [[MOC - Projetos]]

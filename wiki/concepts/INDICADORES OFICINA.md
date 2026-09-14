@@ -10,9 +10,12 @@ updated: 2026-09-14
 
 # INDICADORES OFICINA
 
-Pasta de documentos brutos migrada da antiga estrutura de pastas, ainda não sintetizada em página de conceito. Contém:
+Pasta de documentos brutos migrada da antiga estrutura de pastas, ainda não sintetizada em página de conceito. Arquivos:
 
-- Relatórios mensais de indicadores de manutenção: janeiro, fevereiro, março e abril de 2026
-- Apresentação TMK da reunião de pátio de 25/04/25
+- [[INDICADORES MANUTENÇÃO - JANEIRO 2026.pdf]]
+- [[INDICADORES MANUTENÇÃO - FEVEREIRO 2026.pdf]]
+- [[INDICADORES MANUTENÇÃO - MARÇO 2026.pdf]]
+- [[INDICADORES MANUTENÇÃO - ABRIL 2026.pdf]]
+- [[Apresentação TMK - REUNIAO-PATIO-25-04-25.pptx]]
 
 Ver também: [[MOC - Conceitos]]
