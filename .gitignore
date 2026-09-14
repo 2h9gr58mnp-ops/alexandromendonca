@@ -1,0 +1,24 @@
+# This repo is scoped to the LLM wiki only. Everything else at this root
+# (pre-existing personal/business folders such as backup/, RH e Financeiro/,
+# Banco de Horas/, etc.) predates this setup and is intentionally excluded —
+# some of it (e.g. backup/CREDENCIAIS) may contain credentials or sensitive
+# personal data and must never be committed. See CLAUDE.md > Git scope.
+/*
+
+!/raw/
+!/wiki/
+!/outputs/
+!/CLAUDE.md
+!/.gitignore
+
+# OS cruft (still ignored even inside tracked folders)
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Temp/cache/editor files
+*.tmp
+*.bak
+~$*
+.vscode/
