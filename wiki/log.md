@@ -52,3 +52,7 @@ Renamed the test note to `MOC - Clientes` and moved it to `wiki/clients/MOC - Cl
 ## [2026-09-14] setup | MOC hub pages created for all remaining categories
 
 Created the remaining four category MOC pages the same way (Templater template, renamed, dataview query fixed to point at the note's own title, moved into place): `wiki/people/MOC - Pessoas.md`, `wiki/projects/MOC - Projetos.md`, `wiki/meetings/MOC - Reuniões.md`, `wiki/concepts/MOC - Conceitos.md`. All five category folders now have a hub page. Linked all four from `wiki/index.md`. None of them show any results yet since no other notes link back to them — that's expected until real content gets ingested and cross-linked.
+
+## [2026-09-14] setup | Demonstrated MOC backlink mechanism
+
+Created `wiki/projects/projeto-exemplo.md`, a minimal demo page linking back to `[[MOC - Projetos]]`, to show Alexandro how the Dataview `list from [[...]]` query populates. Confirmed in the Obsidian desktop app (found the vault had opened on the second monitor after some vault-switching confusion) that `MOC - Projetos` now lists both `index` and `projeto-exemplo` under "Notas desta pasta". This page is explicitly a demo, not a real project — noted as such in its own body text, safe to delete or replace once the first real project is ingested.
