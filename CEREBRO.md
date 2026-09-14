@@ -55,6 +55,8 @@ type: person        # person | client | project | meeting | concept
 tags: [acme-corp, engineering]
 date: 2026-09-14    # date of creation or of the event/meeting the page covers
 sources:
+![[Sem título.base]]
+
   - raw/meetings/2026-09-14_kickoff-call.md
 updated: 2026-09-14  # last date this page was touched
 ---

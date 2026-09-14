@@ -8,7 +8,7 @@
 !/raw/
 !/wiki/
 !/outputs/
-!/CLAUDE.md
+!/CEREBRO.md
 !/.gitignore
 
 # OS cruft (still ignored even inside tracked folders)
@@ -22,3 +22,10 @@ $RECYCLE.BIN/
 *.bak
 ~$*
 .vscode/
+
+# wiki/backup/ is an 18GB+ dump of old software installers, videos, and
+# unsorted personal/business files (not wiki content) filed in from the
+# pre-existing root backup/ folder. Kept on disk for browsing in Obsidian,
+# but excluded from git — individual documents worth keeping should be
+# promoted into raw/ one at a time via the normal ingest workflow instead.
+/wiki/backup/
